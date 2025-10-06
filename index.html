@@ -1,0 +1,377 @@
+> Mark Bogdanov𒉭:
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторная работа 2</title>
+    
+    <!-- Подключение Bootstrap 4 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+    <!-- Дополнительные стили -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        header {
+            background-color: #2c3e50;
+        }
+        
+        .logo {
+            width: 60px;
+            height: 60px;
+            background-color: #3498db;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        
+        section {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        h1, h2 {
+            color: #2c3e50;
+        }
+        
+        footer {
+            background-color: #2c3e50;
+            color: white;
+        }
+        
+        .required::after {
+            content: " *";
+            color: red;
+        }
+        
+        .error-message {
+            color: #e74c3c;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+            display: none;
+        }
+        
+        table {
+            border-collapse: collapse;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: #2c3e50;
+            color: white;
+            font-weight: bold;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        tr:nth-child(odd) {
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header class="py-3">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+                <div class="d-flex align-items-center mb-3 mb-md-0">
+                    <div class="logo mr-3">Лого</div>
+                    <h1 class="h4 mb-0 text-white">Мой учебный сайт</h1>
+                </div>
+                <nav>
+                    <ul class="nav flex-column flex-md-row">
+                        <li class="nav-item mb-2 mb-md-0 mr-md-3">
+                            <a class="nav-link text-white" href="#links">Ссылки</a>
+                        </li>
+                        <li class="nav-item mb-2 mb-md-0 mr-md-3">
+                            <a class="nav-link text-white" href="#table">Таблица</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#form">Форма</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container py-4">
+        <!-- Анкор для навигации -->
+        <a id="top"></a>
+        <h1 class="mb-4">Лабораторная работа 2</h1>
+
+> Mark Bogdanov𒉭:
+<!-- Сетка для секций с изменением порядка на мобильных устройствах -->
+        <div class="row">
+            <!-- Секция с таблицей (первая на мобильных) -->
+            <div class="col-12 order-2 order-md-1 mb-4">
+                <section id="table" class="p-3">
+                    <h2 class="mb-3">Таблица</h2>
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Колонка 1</th>
+                                    <th>Колонка 2</th>
+                                    <th>Колонка 3</th>
+                                    <th>Колонка 4</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="2">Ячейка 1-2 объединенная</td>
+                                    <td>Ячейка 3</td>
+                                    <td rowspan="2">Ячейка 4-5 объединенная</td>
+                                </tr>
+                                <tr>
+                                    <td>Ячейка 6</td>
+                                    <td>Ячейка 7</td>
+                                    <td>Ячейка 8</td>
+                                </tr>
+                                <tr>
+                                    <td>Ячейка 9</td>
+                                    <td colspan="3">Ячейка 10-12 объединенная</td>
+                                </tr>
+                                <tr>
+                                    <td>Ячейка 13</td>
+                                    <td>Ячейка 14</td>
+                                    <td>Ячейка 15</td>
+                                    <td>Ячейка 16</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">Ячейка 17-21 объединенная</td>
+                                    <td>Ячейка 18</td>
+                                    <td>Ячейка 19</td>
+                                    <td>Ячейка 20</td>
+                                </tr>
+                                <tr>
+                                    <td>Ячейка 22</td>
+                                    <td>Ячейка 23</td>
+                                    <td>Ячейка 24</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+            
+            <!-- Секция со ссылками (вторая на мобильных) -->
+            <div class="col-12 order-1 order-md-2 mb-4">
+                <section id="links" class="p-3">
+                    <h2 class="mb-3">Список гиперссылок</h2>
+                    <ol>
+                        <li class="mb-2"><a href="http://kubsu.ru/">КубГУ</a> </li>
+                        <li class="mb-2"><a href="https://kubsu.ru/">КубГУ</a> </li>
+                        <li class="mb-2"><a href="https://kubsu.ru/">
+                            <img src="Group3288.png" alt="Описание изображения">
+                        </a></li>
+                        <li class="mb-2"><a href="/about">Сокращенная ссылка на внутреннюю страницу</a></li>
+                        <li class="mb-2"><a href="/">Сокращенная ссылка на главную страницу</a></li>
+                        <li class="mb-2"><a href="#top">Ссылка на фрагмент текущей страницы</a></li>
+                        <li class="mb-2"><a href="https://example.com/page?param1=value1&param2=value2&param3=value3">Ссылка с тремя параметрами в URL</a></li>
+                        <li class="mb-2"><a href="https://example.com/page?id=123">Ссылка с параметром id в URL</a></li>
+                        <li class="mb-2"><a href="form.html">Относительная на страницу в текущем каталоге</a></li>
+                        <li class="mb-2"><a href="about/form.html">Относительная на страницу в каталоге about</a></li>
+<li class="mb-2"><a href="../parent.html">Относительная на страницу в каталоге уровнем выше</a></li>
+                        <li class="mb-2"><a href="../../grandparent.html">Относительная на страницу двумя уровнями выше</a></li>
+                        <li class="mb-2"><p>Это текст абзаца с <a href="https://kubsu.ru">контекстной ссылкой</a> внутри него.</p></li>
+                        <li class="mb-2"><a href="https://example.com/about#team">Ссылка на фрагмент страницы стороннего сайта</a></li>
+                        <li class="mb-2">
+                            <img src="КВ.png" alt="Image Map" usemap="#examplemap" >
+                            <map name="examplemap">
+                                <area shape="rect" coords="96,105,725,750" href="https://www.kubsu.ru/ai/" alt="Rectangular area">
+                                <area shape="circle" coords="1179,402,330" href="https://vk.com/kubsu_official" alt="Circular area">
+                            </map>
+                        </li>
+                        <li class="mb-2"><a href="">Ссылка с пустым href</a></li>
+                        <li class="mb-2"><a>Ссылка без href</a></li>
+                        <li class="mb-2"><a href="https://kubsu.ru" rel="nofollow">Ссылка с запрещенным переходом для поисковиков</a></li>
+                        <li class="mb-2"><a href="https://kubsu.ru" rel="noindex">Ссылка, запрещенная для индексации</a></li>
+                        <li class="mb-2">
+                            <ol>
+                                <li class="mb-2"><a href="https://kubsu.ru" title="Официальный сайт КубГУ">Кубанский государственный университет</a></li>
+                                <li class="mb-2"><a href="https://kubsu.ru/university" title="Информация об университете">Об университете</a></li>
+                                <li class="mb-2"><a href="https://kubsu.ru/education" title="Образовательные программы">Образование</a></li>
+                            </ol>
+                        </li>
+                        <li class="mb-2"><a href="ftp://user:password@ftp.example.com/file.txt">Ссылка на файл на сервере FTP с авторизацией</a></li>
+                    </ol>
+                </section>
+            </div>
+            
+            <!-- Секция с формой (третья на мобильных) -->
+            <div class="col-12 order-3 mb-4">
+                <section id="form" class="p-3">
+                    <h2 class="mb-3">Форма с обязательными полями</h2>
+                    <form action="/" method="POST" id="myForm" class="mx-auto" style="max-width: 600px;">
+                        <div class="form-group">
+                            <label class="required">
+                                Поле для ввода Ф.И.О:
+                            </label>
+                            <input type="text" name="field-fio" class="form-control" placeholder="Введите Ф.И.О" required>
+                            <div class="error-message">Это поле обязательно для заполнения</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="required">
+                                Поле для ввода номера телефона:
+                            </label>
+                            <input type="tel" name="field-number" class="form-control" placeholder="Введите номер телефона" required pattern="[0-9]{10,11}">
+                            <div class="error-message">Введите корректный номер телефона (10-11 цифр)</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="required">
+                                Поле для ввода e-mail:
+                            </label>
+                            <input type="email" name="field-email" class="form-control" placeholder="Введите e-mail" required>
+                            <div class="error-message">Введите корректный email адрес</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="required">
+                                Поле для ввода даты рождения:
+                            </label>
+                            <input type="date" name="field-date" class="form-control" required>
+                            <div class="error-message">Выберите дату рождения</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="required">
+                                Выберите пол:
+                            </label>
+                            <div class="radio-group">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="radio-gender" id="male" value="male" required>
+                                    <label class="form-check-label" for="male">
+                                        Мужской
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="radio-gender" id="female" value="female">
+                                    <label class="form-check-label" for="female">
+                                        Женский
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="error-message">Выберите пол</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="required">
+                                Выберите любимый язык программирования:
+                            </label>
+                            <select name="field-programming-languages[]" class="form-control" multiple size="8" required>
+                                <option value="pascal">Pascal</option>
+                                <option value="c">C</option>
+                                <option value="c++">C++</option>
+                                <option value="javascript">JavaScript</option>
+                                <option value="php">PHP</option>
+                                <option value="python">Python</option>
+                                <option value="java">Java</option>
+                                <option value="haskel">Haskel</option>
+                                <option value="clojure">Clojure</option>
+                                <option value="prolog">Prolog</option>
+                                <option value="scala">Scala</option>
+                            </select>
+                            <div class="error-message">Выберите хотя бы один язык программирования</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="required">
+                                Опишите краткую биографию:
+                            </label>
+                            <textarea name="field-biography" class="form-control" placeholder="Опишите свою биографию" required minlength="10"></textarea>
+                            <div class="error-message">Биография должна содержать не менее 10 символов</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="checkbox-group">
+                                <div class="form-check">
+                                    <input class="form-check-input" name="field-check" type="checkbox" required>
+                                    <label class="form-check-label required">
+                                        С контрактом ознакомлен(а)
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="error-message">Необходимо принять условия контракта</div>
+                        </div>
+                        <input class="btn btn-success" value="Сохранить" type="submit">
+                    </form>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Подвал сайта -->
+    <footer class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="mb-0">&copy; Богданов Марк 2025</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('myForm');
+            
+            // Показываем сообщения об ошибках при попытке отправки
+            form.addEventListener('submit', function(event) {
+                let isValid = true;
+                
+                // Проверка всех обязательных полей
+                const requiredFields = form.querySelectorAll('[required]');
+                requiredFields.forEach(function(field) {
+                    if (!field.value.trim() || (field.type === 'checkbox' && !field.checked)) {
+                        isValid = false;
+                        field.nextElementSibling.style.display = 'block';
+                    } else {
+                        field.nextElementSibling.style.display = 'none';
+                    }
+                });
+                
+                // Проверка радиокнопок
+                const genderRadios = form.querySelectorAll('input[name="radio-gender"]');
+                let genderSelected = false;
+                for (const radio of genderRadios) {
+                    if (radio.checked) {
+                        genderSelected = true;
+                        break;
+                    }
+                }
+                if (!genderSelected) {
+                    isValid = false;
+                    document.querySelectorAll('.error-message')[4].style.display = 'block';
+                } else {
+                    document.querySelectorAll('.error-message')[4].style.display = 'none';
+                }
+                
+                if (!isValid) {
+                    event.preventDefault();
+                    alert('Пожалуйста, заполните все обязательные поля.');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
